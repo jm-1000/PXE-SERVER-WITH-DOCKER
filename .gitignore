@@ -1,2 +1,3 @@
 tmp/
 tftpboot/clonezilla-live
+.gitignore
