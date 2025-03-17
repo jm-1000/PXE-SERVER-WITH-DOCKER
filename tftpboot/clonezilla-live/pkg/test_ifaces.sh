@@ -3,7 +3,6 @@
 DHCP_OK=""
 PING_OK=""
 INTERFACES=($(ls /sys/class/net | grep -v lo))
-REGEX="addr:([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)"
 
 test_dhcp () {
   local INTERFACE=$1
