@@ -1,2 +1,4 @@
-tmp/
-tftpboot/clonezilla-live/*
+bkp
+tftpboot/clonezilla-live/live/*
+tftpboot/clonezilla-live/pkg/*
+

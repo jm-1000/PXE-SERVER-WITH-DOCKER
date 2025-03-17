@@ -1,0 +1,16 @@
+[Unit]
+Description=PXE server
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10s
+ExecStart=/etc/pxe-server/run-pxe-srv.sh
+ExecStartPost=/etc/pxe-server/run-pxe-srv.sh --trackIp
+ExecStop=/etc/pxe-server/run-pxe-srv.sh --stop
+ExecStopPost=/etc/pxe-server/run-pxe-srv.sh --delete
+
+[Install]
+WantedBy=multi-user.target

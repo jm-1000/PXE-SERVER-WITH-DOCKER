@@ -1,0 +1,12 @@
+DEFAULT menu.c32
+PROMPT 1
+TIMEOUT 30
+NOESCAPE 1
+MENU MARGIN 5
+MENU TITLE PXE Boot Menu
+
+LABEL Osmozis Clonezilla Live
+    MENU LABEL Boot Osmozis Clonezilla Live
+    KERNEL clonezilla-live/live/vmlinuz
+    APPEND initrd=clonezilla-live/live/initrd.img fetch=http://${PXE_IP}/clonezilla-live/live/filesystem.squashfs ocs_live_run="mkdir /tmp/pkg && cd /tmp/pkg && wget -r -np -nH --cut-dirs=2 -R 'index.html*,*.txt' http://${PXE_IP}/clonezilla-live/pkg/ && chmod +x *ocs *.sh && clear && test_ifaces.sh" ocs_live_batch="no" boot=live union=overlay username=user config components  noswap edd=on nomodeset enforcing=0 locales=fr_FR.UTF-8 keyboard-layouts=fr vga=788 net.ifnames=0 quiet nosplash i915.blacklist=yes radeonhd.blacklist=yes nouveau.blacklist=yes vmwgfx.enable_fbdev=1 
+
